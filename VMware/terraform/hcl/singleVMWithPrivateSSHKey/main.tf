@@ -66,6 +66,7 @@ resource "vsphere_virtual_machine" "vm" {
   clone {
     template_uuid = data.vsphere_virtual_machine.vm_image_template.id
     timeout       = var.vm_clone_timeout
+    firmware      = var.vm_firmware
     customize {
       linux_options {
         domain    = var.vm_domain_name
