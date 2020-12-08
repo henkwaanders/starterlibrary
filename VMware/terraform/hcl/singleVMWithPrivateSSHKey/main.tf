@@ -63,10 +63,13 @@ resource "vsphere_virtual_machine" "vm" {
   guest_id         = data.vsphere_virtual_machine.vm_image_template.guest_id
   scsi_type        = data.vsphere_virtual_machine.vm_image_template.scsi_type
   tags = vsphere_tag.ibm_terraform_automation_tags[*].id
+
+  firmware         = var.vm_image_template == "rhel78" ? "bios" : var.firmware_type
+
   clone {
     template_uuid = data.vsphere_virtual_machine.vm_image_template.id
     timeout       = var.vm_clone_timeout
-    firmware      = var.firmware_type
+
     customize {
       linux_options {
         domain    = var.vm_domain_name
