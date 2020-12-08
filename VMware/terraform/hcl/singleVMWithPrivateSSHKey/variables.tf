@@ -120,7 +120,7 @@ variable "vm_os_public_ssh_key" {
   type = string
 }
 
-variable "vm_firmware" {
+variable "firmware_type" {
   type = string
   default = "efi"
 }
