@@ -20,7 +20,7 @@
     }
   },
   "metadata": {
-      "displayName": "Single Virtual Machine with Private SSh Key",
+      "displayName": "Single Virtual Machine with Private SSh Key and fw",
       "longDescription": "Create Virtual Machine and outputs a generated private SSH key",
       "bullets": [
        {
